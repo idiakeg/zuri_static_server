@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: "Roboto", sans-serif;
+	background-color: powderblue;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.container {
+	/* border: 1px solid red; */
+	width: 50%;
+	padding: 20px 20px 40px;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	background-color: white;
+	border-radius: 8px;
+}
+
+h1 {
+	margin: 0;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+form {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	margin-inline: auto;
+}
+
+.form_group {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+
+input,
+select {
+	padding: 10px 5px;
+	cursor: pointer;
+	border-radius: 6px;
+	border: 1px solid #2ac3d7;
+	width: 220px;
+}
+
+input:focus,
+select:focus {
+	outline: 1.5px solid #13c2d9;
+}
+
+button {
+	width: 50%;
+	padding: 10px 25px;
+	margin-inline: auto;
+	background-color: powderblue;
+	border: none;
+	border-radius: 6px;
+	font-weight: 600;
+	margin-top: 1.5rem;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+	font-size: 1rem;
+	outline: none;
+}
+
+button:hover {
+	background-color: #2ac3d7;
+}
+
+.success_container {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	flex-direction: column;
+	background-color: white;
+	padding: 40px 20px;
+	border-radius: 8px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
+	padding: 8px 15px;
+	border-radius: 4px;
+	background-color: powderblue;
+	font-weight: 600;
+	transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+	transform: scale(1.15);
+	background-color: #2ac3d7;
+}
+
+@media screen and (max-width: 930px) {
+	.container {
+		width: 69%;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.container {
+		width: 80%;
+	}
+
+	input,
+	select {
+		width: 180px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	form {
+		margin-inline: none;
+	}
+
+	input,
+	select {
+		width: 120px;
+	}
+
+	label {
+		font-size: 0.875rem;
+	}
+}
