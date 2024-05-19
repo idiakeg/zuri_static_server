@@ -1,22 +1,22 @@
 {
-	"name": "static_server",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"engines": {
-		"node": "20.x"
-	},
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "nodemon index.js"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"nodemon": "^3.1.0"
-	},
-	"dependencies": {
-		"http": "^0.0.1-security"
-	}
+    "name": "static_server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "engines": {
+        "node": "20.x"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "nodemon": "^3.1.0"
+    },
+    "dependencies": {
+        "http": "^0.0.1-security"
+    }
 }

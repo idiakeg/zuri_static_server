@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "title": "Citadel",
+    "comedian": "James Baldwin",
+    "year": 2054
+  },
+  {
+    "first_name": "Game",
+    "last_name": "of",
+    "other_names": "thrones",
+    "email_address": "whaever@gmail.cm",
+    "phone_number": "11223344556",
+    "gender": "male"
+  }
+]
