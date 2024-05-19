@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const requestHandler = (req, res) => {
-	if (req.method === "POST") {
+	if (req.method === "POST" && req.url === "/") {
 		let body = [];
 
 		req.on("data", (chunk) => {
@@ -39,6 +39,8 @@ const requestHandler = (req, res) => {
 			);
 			res.end();
 		});
+
+		return;
 	}
 
 	if (req.method === "GET") {
@@ -48,13 +50,22 @@ const requestHandler = (req, res) => {
 			req.url == "/" ? "index.html" : req.url
 		);
 
+		if (req.url === "/all_users") {
+			let doo = JSON.parse(
+				fs.readFileSync(path.join(__dirname, "database.json"))
+			);
+			res.writeHead(200, { "Content-type": "application/json" });
+			res.end(JSON.stringify(doo));
+			return;
+		}
+
 		fs.readFile(filePath, "utf-8", (err, data) => {
 			if (err) {
 				if (err.code === "ENOENT") {
 					// serve the 404 page
 					fs.readFile(
 						path.join(__dirname, "public", "notFound.html"),
-						"utf-8",
+						"-8",
 						(err, data) => {
 							if (err) console.log(err);
 							res.writeHead(400, { "Content-Type": "text/html" });
@@ -69,7 +80,16 @@ const requestHandler = (req, res) => {
 			res.setHeader("Content-Type", getExtensionName(filePath));
 			res.end(data);
 		});
+
+		return;
 	}
+
+	res.end(
+		JSON.stringify({
+			status: "error",
+			msg: `${req.method} request to ${req.url} is not allowed on the server.`,
+		})
+	);
 };
 
 const getExtensionName = (file_path) => {
