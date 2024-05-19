@@ -14,15 +14,23 @@ const requestHandler = (req, res) => {
 			let goo = JSON.parse(Buffer.concat(body).toString());
 			let db;
 
-			fs.readFile("./database.json", "utf-8", (err, data) => {
-				if (err) console.log(err);
-				db = JSON.parse(data);
-				db.push(goo);
-
-				fs.writeFile("./database.json", JSON.stringify(db, null, 2), (err) => {
+			fs.readFile(
+				path.join(__dirname, "database.json"),
+				"utf-8",
+				(err, data) => {
 					if (err) console.log(err);
-				});
-			});
+					db = JSON.parse(data);
+					db.push(goo);
+
+					fs.writeFile(
+						"./database.json",
+						JSON.stringify(db, null, 2),
+						(err) => {
+							if (err) console.log(err);
+						}
+					);
+				}
+			);
 
 			res.writeHead(200, {
 				"Content-Type": "application/json",
