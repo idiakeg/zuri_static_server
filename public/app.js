@@ -32,7 +32,7 @@ form.addEventListener("submit", (e) => {
     // convert form data to javascript objects
     let data = Object.fromEntries(fd);
 
-    fetch("http://localhost:4343/", {
+    fetch("https://zuri-static-server.vercel.app/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -43,5 +43,5 @@ form.addEventListener("submit", (e) => {
         .then((data) => console.log(data))
         .catch((err) => console.log(err));
 
-    window.location = "/success.html";
+    // window.location = "/success.html";
 });
