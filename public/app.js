@@ -43,5 +43,5 @@ form.addEventListener("submit", (e) => {
         .then((data) => console.log(data))
         .catch((err) => console.log(err));
 
-    window.location = "/success.html";
+    // window.location = "/success.html";
 });
