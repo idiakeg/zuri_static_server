@@ -39,9 +39,11 @@ form.addEventListener("submit", (e) => {
         },
         body: JSON.stringify(data),
     })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
+        .then((res) => {
+            if (res.ok) {
+                console.log(data);
+                // window.location = "/success.html";
+            }
+        })
         .catch((err) => console.log(err));
-
-    // window.location = "/success.html";
 });
