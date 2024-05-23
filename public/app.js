@@ -42,7 +42,7 @@ form.addEventListener("submit", (e) => {
         .then((res) => {
             if (res.ok) {
                 console.log(data);
-                window.location = "/success.html";
+                window.location.href = "/success.html";
             }
         })
         .catch((err) => console.log(err));
