@@ -1,16 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./style.css" />
-		<title>Zuri File Submission</title>
-	</head>
-	<body>
-		<div class="success_container">
-			<h1>Successful form submission.</h1>
-			<a href="./index.html">Home page</a>
-		</div>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Zuri File Submission</title>
+    </head>
+    <body>
+        <div class="success_container">
+            <h1>Successful form submission.</h1>
+            <div class="user">
+                <h2>User Information</h2>
+                <div class="user_info">
+                    <div class="user_details">
+                        <span>First Name</span>
+                        <span id="first_name" class="truncate"></span>
+                    </div>
+                    <div class="user_details">
+                        <span>Last Name</span>
+                        <span id="last_name" class="truncate"></span>
+                    </div>
+                    <div class="user_details">
+                        <span>Other Names</span>
+                        <span id="other_names" class="truncate"></span>
+                    </div>
+                    <div class="user_details">
+                        <span>Email</span>
+                        <span id="email" class="truncate"></span>
+                    </div>
+                    <div class="user_details">
+                        <span>Phone</span>
+                        <span id="phone" class="truncate"></span>
+                    </div>
+                    <div class="user_details">
+                        <span>Gender</span>
+                        <span id="gender" class="truncate"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="./index.html">Home page</a>
+        </div>
+
+        <script>
+            const user_data = JSON.parse(
+                sessionStorage.getItem("zuri_user_data")
+            );
+            console.log(user_data);
+            const first_name = document.getElementById("first_name");
+            const last_name = document.getElementById("last_name");
+            const other_names = document.getElementById("other_names");
+            const gender = document.getElementById("gender");
+            const email_address = document.getElementById("email");
+            const phone = document.getElementById("phone");
+
+            first_name.textContent = user_data.first_name;
+            last_name.textContent = user_data.last_name;
+            other_names.textContent = user_data.other_names;
+            gender.textContent = user_data.gender;
+            email_address.textContent = user_data.email_address;
+            phone.textContent = user_data.phone_number;
+        </script>
+    </body>
 </html>

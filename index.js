@@ -27,7 +27,6 @@ const requestHandler = (req, res) => {
                         JSON.stringify(db, null, 2),
                         (err) => {
                             if (err) console.log(err);
-                            console.log("file written successfully.");
                         }
                     );
                 }
