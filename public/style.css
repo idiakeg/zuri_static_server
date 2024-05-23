@@ -24,8 +24,14 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
+.github_repo {
+    position: fixed;
+    top: 10px;
+    right: 30px;
+    background-color: white;
+}
+
 .container {
-    /* border: 1px solid red; */
     width: 50%;
     padding: 20px 20px 40px;
     display: flex;
@@ -89,6 +95,8 @@ button:hover {
     background-color: #2ac3d7;
 }
 
+/* ========= SUCCESS STYES ====== */
+
 .success_container {
     display: flex;
     align-items: center;
@@ -111,8 +119,48 @@ a {
 }
 
 a:hover {
-    transform: scale(1.15);
+    transform: scale(1.08);
     background-color: #2ac3d7;
+}
+
+.user {
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    margin: 0;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.user_info {
+    border: 1px solid powderblue;
+    border-radius: 5px;
+    overflow: hidden;
+    display: grid;
+    gap: 0.15rem;
+}
+
+.user_details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.user_details:nth-child(odd) {
+    background-color: powderblue;
+}
+
+.user_details > * {
+    padding: 5px;
+}
+
+.truncate {
+    min-width: 60px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 930px) {
@@ -132,7 +180,7 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 470px) {
     .container {
         width: 90%;
     }
@@ -152,11 +200,24 @@ a:hover {
     }
 
     h1 {
-        font-size: 0.92rem;
+        font-size: 1rem;
         margin-bottom: 0.5rem;
+    }
+
+    h2,
+    .user_info {
+        font-size: 0.9rem;
     }
 
     button {
         width: 65%;
+    }
+
+    .success_container {
+        width: 90%;
+    }
+
+    .user {
+        width: 100%;
     }
 }

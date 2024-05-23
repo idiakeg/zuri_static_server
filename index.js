@@ -27,7 +27,6 @@ const requestHandler = (req, res) => {
                         JSON.stringify(db, null, 2),
                         (err) => {
                             if (err) console.log(err);
-                            console.log("file written successfully.");
                         }
                     );
                 }
@@ -71,7 +70,7 @@ const requestHandler = (req, res) => {
         fs.readFile(filePath, "utf-8", (err, data) => {
             if (err) {
                 if (err.code === "ENOENT") {
-                    // serve the 404 page
+                    // serve the 404 / not found page
                     fs.readFile(
                         path.join(__dirname, "public", "notFound.html"),
                         "-8",
